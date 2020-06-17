@@ -1,6 +1,6 @@
 //@ts-nocheck
 const express = require("express");
-const downloadImage = require("image-downloader");
+
 const cors = require("cors");
 const puppeteer = require("puppeteer");
 
@@ -30,11 +30,8 @@ app.use(
 
 app.post("/", async (req, res) => {
   const { url } = await req.body;
-  // res.json({
-  //   test: "test",
-  // })
   (async () => {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(60000);
     page.setViewport({
