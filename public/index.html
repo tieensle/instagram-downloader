@@ -13,17 +13,49 @@
     <title>Instagram Downloader</title>
   </head>
 
-  <body>
-    <div id="app container bg-secondary">
-      <div class="row align-center justify-center">
-        <input type="text" placeholder="URL Instagram" id="img-url" />
-        <button class="btn btn-primary" id="img-btn">Get image</button>
-        <button class="btn btn-primary" id="btn-download" style="display: none">
+  <body class="bg-secondary">
+    <div id="app" class="container">
+      <div class="input-group mb-3 mt-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="URL Instagram"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+          id="img-url"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-success" type="button" id="img-btn">
+            Get image
+          </button>
+          <button
+            class="btn btn-danger"
+            type="button"
+            id="btn-download"
+            style="display: none"
+          >
+            Download all image
+          </button>
+        </div>
+      </div>
+      <!-- <div class="row mt-2 d-flex justify-content-center">
+        <input
+          type="text"
+          placeholder="URL Instagram"
+          id="img-url"
+          class="m-1"
+        />
+        <button class="btn btn-primary m-1" id="img-btn">Get image</button>
+        <button
+          class="btn btn-primary m-1"
+          id="btn-download"
+          style="display: none"
+        >
           Download all image
         </button>
-      </div>
+      </div> -->
       <div class="album py-5 bg-light">
-        <div class="container" id="img-area"></div>
+        <div class="container" id="img-area">Image Area</div>
       </div>
     </div>
   </body>

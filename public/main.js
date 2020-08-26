@@ -5,8 +5,7 @@ btn.addEventListener("click", async () => {
   const url = document.querySelector("#img-url").value;
   const imgArea = document.getElementById("img-area");
   imgArea.innerHTML = "Collecting...";
-  console.log(url);
-  const { imgs } = await fetch("http://localhost:3000", {
+  const { imgs, err } = await fetch("http://localhost:3000", {
     method: "POST",
     mode: "cors",
     headers: {
@@ -18,7 +17,6 @@ btn.addEventListener("click", async () => {
   });
   let row = document.createElement("div");
   row.classList.add("row");
-
   for (let i = 0; i < imgs.length; i++) {
     const element = `
             <div class="col-md-4">

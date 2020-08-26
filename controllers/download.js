@@ -14,7 +14,7 @@ const PASSWORD = process.env.PASS;
 const downloadImage = async (req, res) => {
   const { url } = await req.body;
   (async () => {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(60000);
     page.setViewport({
@@ -51,10 +51,9 @@ const downloadImage = async (req, res) => {
             const scrollBefore = window.scrollY;
             window.scrollBy(0, window.innerHeight);
             if (window.scrollY === scrollBefore) {
-              console.log("this is bottom!");
               allImgs = new Set(allImgs);
               allImgs = [...allImgs];
-              console.log(allImgs);
+
               clearInterval(timer);
               resolve(allImgs);
             }
@@ -65,7 +64,6 @@ const downloadImage = async (req, res) => {
       });
       return promise;
     });
-    console.log("Finished");
     res.json({
       imgs: imgLinks,
     });
