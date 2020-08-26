@@ -6,7 +6,6 @@ btn.addEventListener("click", async () => {
   const imgArea = document.getElementById("img-area");
   imgArea.innerHTML = "Collecting...";
   console.log(url);
-  // const apiKey = document.querySelector("#key").value;
   const { imgs } = await fetch("http://localhost:3000", {
     method: "POST",
     mode: "cors",
