@@ -63,33 +63,36 @@ btn.addEventListener("click", async () => {
   imgArea.innerHTML = "";
   imgArea.appendChild(row);
 
-  const btnDownloadOnes = document.querySelectorAll("#btn-download-one");
+  const btnDownloadOne = document.querySelectorAll("#btn-download-one");
 
-  btnDownloadOnes.forEach((btn) => {
+  btnDownloadOne.forEach((btn) => {
     btn.addEventListener("click", (event) => {
       const url = event.target.getAttribute("data-link");
       forceDownload(url, "image.png");
     });
   });
 
-  const downloadBtn = document.getElementById("btn-download");
-  downloadBtn.setAttribute("style", "display : content");
-  downloadBtn.addEventListener("click", () => {
-    imgs.forEach((img, i) => {
-      forceDownload(img, `anh${i + 1}.png`);
-    });
+  const btnDownloadAll = document.getElementById("btn-download");
+  btnDownloadAll.setAttribute("style", "display : content");
+  btnDownloadAll.addEventListener("click", () => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index == imgs.length - 1) clearInterval(timer);
+      forceDownload(imgs[index], `image${++index}.png`);
+    }, 100);
+    // }
   });
 });
 
 //function to send request download image
 function forceDownload(url, fileName) {
-  var xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.responseType = "blob";
   xhr.onload = function () {
-    var urlCreator = window.URL || window.webkitURL;
-    var imageUrl = urlCreator.createObjectURL(this.response);
-    var tag = document.createElement("a");
+    const urlCreator = window.URL || window.webkitURL;
+    const imageUrl = urlCreator.createObjectURL(this.response);
+    const tag = document.createElement("a");
     tag.href = imageUrl;
     tag.download = fileName;
     document.body.appendChild(tag);

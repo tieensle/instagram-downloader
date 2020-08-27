@@ -9,12 +9,21 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <link href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
     <title>Instagram Downloader</title>
   </head>
 
   <body class="bg-secondary">
     <div id="app" class="container">
+      <div class="rules m-3 text-info">
+        The more images, the more time we use to collect ( < 2 minutes). Please
+        refresh if it take long time
+      </div>
       <div class="input-group mb-3 mt-3">
         <input
           type="text"
@@ -38,22 +47,7 @@
           </button>
         </div>
       </div>
-      <!-- <div class="row mt-2 d-flex justify-content-center">
-        <input
-          type="text"
-          placeholder="URL Instagram"
-          id="img-url"
-          class="m-1"
-        />
-        <button class="btn btn-primary m-1" id="img-btn">Get image</button>
-        <button
-          class="btn btn-primary m-1"
-          id="btn-download"
-          style="display: none"
-        >
-          Download all image
-        </button>
-      </div> -->
+
       <div class="album py-5 bg-light">
         <div class="container" id="img-area">Image Area</div>
       </div>
