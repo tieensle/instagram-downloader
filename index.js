@@ -12,7 +12,6 @@ require("dotenv").config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(__dirname + "/public"));
 
 app.use(
   cors({
@@ -21,6 +20,7 @@ app.use(
 );
 
 app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/controllers"));
 
 app.get("/", (req, res) => {
   res.sendFile("index.html");
