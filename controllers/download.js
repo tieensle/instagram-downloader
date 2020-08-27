@@ -14,7 +14,7 @@ const PASSWORD = process.env.PASS;
 const downloadImage = async (req, res) => {
   const { url } = await req.body;
   (async () => {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(60000);
     page.setViewport({
