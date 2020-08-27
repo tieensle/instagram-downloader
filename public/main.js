@@ -5,7 +5,7 @@ btn.addEventListener("click", async () => {
   const url = document.querySelector("#img-url").value;
   const imgArea = document.getElementById("img-area");
   imgArea.innerHTML = "Collecting...";
-  const { imgs, err } = await fetch("https://downinstagram.herokuapp.com/", {
+  const { imgs, err } = await fetch("/", {
     method: "POST",
     mode: "cors",
     headers: {
