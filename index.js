@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
   res.sendFile("index.html");
 });
 
-app.post("/", async (req, res) => {
+app.post("/img", async (req, res) => {
   downloadImage(req, res);
 });
 

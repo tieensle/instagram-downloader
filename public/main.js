@@ -5,7 +5,7 @@ btn.addEventListener("click", async () => {
   const url = document.querySelector("#img-url").value;
   const imgArea = document.getElementById("img-area");
   imgArea.innerHTML = "Collecting...";
-  const { imgs, err } = await fetch("/", {
+  const { imgs, err } = await fetch("/img", {
     method: "POST",
     mode: "cors",
     headers: {
