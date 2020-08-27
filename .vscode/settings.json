@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/130f3d4b-7faf-434a-a609-1396a9c4f7f9/resourceGroups/instagram-downloader/providers/Microsoft.Web/sites/instagram-downloader",
+    "appService.deploySubpath": "."
+}
