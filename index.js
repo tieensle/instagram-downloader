@@ -6,21 +6,21 @@ const puppeteer = require("puppeteer");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const { downloadImage } = require("./controllers/download.js");
 
 require("dotenv").config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/controllers"));
+
+const { downloadImage } = require("./controllers/download.js");
 
 app.use(
   cors({
     origin: "*",
   })
 );
-
-app.use(express.static(__dirname + "/public"));
-app.use(express.static(__dirname + "/controllers"));
 
 app.get("/", (req, res) => {
   res.sendFile("index.html");
@@ -33,9 +33,75 @@ const anh = [
 ];
 
 app.post("/img", async (req, res) => {
-  res.json({
-    imgs: anh,
-  });
+  const USERNAME_SELECTOR =
+    "#loginForm > div > div:nth-child(1) > div > label > input";
+  const PASSWORD_SELECTOR =
+    "#loginForm > div > div:nth-child(2) > div > label > input";
+
+  const BTN_SELECTOR = "#loginForm > div > div:nth-child(3) > button";
+  const USERNAME = process.env.NAME;
+  const PASSWORD = process.env.PASS;
+
+  const downloadImage = async (req, res) => {
+    const { url } = await req.body;
+    (async () => {
+      const browser = await puppeteer.launch();
+      const page = await browser.newPage();
+      await page.setDefaultNavigationTimeout(60000);
+      page.setViewport({
+        width: 1280,
+        height: 720,
+      });
+      await page.goto(url);
+      await page.waitForSelector(USERNAME_SELECTOR);
+      await page.waitForSelector(PASSWORD_SELECTOR);
+      await page.waitForSelector(BTN_SELECTOR);
+      await page.type(USERNAME_SELECTOR, USERNAME);
+      await page.type(PASSWORD_SELECTOR, PASSWORD);
+      await page.click(BTN_SELECTOR);
+
+      await page.waitForNavigation();
+      await page.waitForSelector(
+        "#react-root > section > main > div > div > div > div > button"
+      );
+      await page.click(
+        "#react-root > section > main > div > div > div > div > button"
+      );
+      await page.waitForNavigation();
+
+      const imgLinks = await page.evaluate(async () => {
+        const promise = new Promise(async (resolve, reject) => {
+          try {
+            let allImgs = [];
+            const timer = await setInterval(async () => {
+              let imgs = await document.querySelectorAll("img.FFVAD");
+              imgs = [...imgs];
+              const imgSrc = imgs.map((e) => e.getAttribute("src"));
+              allImgs.push(...imgSrc);
+              window.scrollBy(0, window.innerHeight);
+              const scrollBefore = window.scrollY;
+              window.scrollBy(0, window.innerHeight);
+              if (window.scrollY === scrollBefore) {
+                allImgs = new Set(allImgs);
+                allImgs = [...allImgs];
+
+                clearInterval(timer);
+                resolve(allImgs);
+              }
+            }, 3500);
+          } catch (error) {
+            reject(error.message);
+          }
+        });
+        return promise;
+      });
+      res.json({
+        imgs: imgLinks,
+      });
+      await browser.close();
+    })();
+  };
+
   // downloadImage(req, res);
 });
 
