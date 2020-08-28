@@ -26,8 +26,17 @@ app.get("/", (req, res) => {
   res.sendFile("index.html");
 });
 
+const anh = [
+  "https://instagram.fhan5-5.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.125.1440.1440a/s640x640/117562603_2365966393704493_3361804117184323377_n.jpg?_nc_ht=instagram.fhan5-5.fna.fbcdn.net&_nc_cat=101&_nc_ohc=Rtv_lYy42OsAX9yHVMT&oh=edbef2e5aa2abad39e3d7e71d9154f70&oe=5F71A92B",
+  "https://instagram.fhan5-5.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.125.1440.1440a/s640x640/117562603_2365966393704493_3361804117184323377_n.jpg?_nc_ht=instagram.fhan5-5.fna.fbcdn.net&_nc_cat=101&_nc_ohc=Rtv_lYy42OsAX9yHVMT&oh=edbef2e5aa2abad39e3d7e71d9154f70&oe=5F71A92B",
+  "https://instagram.fhan5-5.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.125.1440.1440a/s640x640/117562603_2365966393704493_3361804117184323377_n.jpg?_nc_ht=instagram.fhan5-5.fna.fbcdn.net&_nc_cat=101&_nc_ohc=Rtv_lYy42OsAX9yHVMT&oh=edbef2e5aa2abad39e3d7e71d9154f70&oe=5F71A92B",
+];
+
 app.post("/img", async (req, res) => {
-  downloadImage(req, res);
+  res.json({
+    imgs: anh,
+  });
+  // downloadImage(req, res);
 });
 
 app.listen(PORT, () => {
