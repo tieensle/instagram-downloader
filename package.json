@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/tieensle/instagram-downloader.git"
   },
+  "engines": {
+    "node": "12.16.3"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
