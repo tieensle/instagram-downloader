@@ -5,7 +5,6 @@ const cors = require("cors");
 const puppeteer = require("puppeteer");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 require("dotenv").config();
 
@@ -30,6 +29,7 @@ app.post("/img", async (req, res) => {
   downloadImage(req, res);
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log("Connected to server");
+  console.log(`App is running on http://localhost:${PORT}`);
 });
