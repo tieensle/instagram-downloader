@@ -1,9 +1,12 @@
-const btn = document.querySelector("#img-btn");
-const area = document.querySelector("#img-area");
+const btn = document.querySelector("#get-btn");
+const area = document.querySelector("#images");
 
-btn.addEventListener("click", async () => {
+btn.addEventListener("click", async (event) => {
   const url = document.querySelector("#img-url").value;
-  const imgArea = document.getElementById("img-area");
+  const imgArea = document.getElementById("images");
+  if (!url) {
+    return;
+  }
   imgArea.innerHTML = "Collecting...";
   const { imgs, err } = await fetch("/img", {
     method: "POST",
@@ -47,7 +50,7 @@ btn.addEventListener("click", async () => {
                         type="button"
                         class="btn btn-sm btn-outline-secondary"
                         data-link=${imgs[i]}
-                        id="btn-download-one"
+                        id="single-download-btn"
                       >
                         Download
                       </button>
@@ -63,7 +66,7 @@ btn.addEventListener("click", async () => {
   imgArea.innerHTML = "";
   imgArea.appendChild(row);
 
-  const btnDownloadOne = document.querySelectorAll("#btn-download-one");
+  const btnDownloadOne = document.querySelectorAll("#single-download-btn");
 
   btnDownloadOne.forEach((btn) => {
     btn.addEventListener("click", (event) => {
@@ -72,7 +75,7 @@ btn.addEventListener("click", async () => {
     });
   });
 
-  const btnDownloadAll = document.getElementById("btn-download");
+  const btnDownloadAll = document.getElementById("download-btn");
   btnDownloadAll.setAttribute("style", "display : content");
   btnDownloadAll.addEventListener("click", () => {
     let index = 0;
