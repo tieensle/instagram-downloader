@@ -25,6 +25,7 @@ const downloadImage = async (req, res) => {
       height: 720,
     });
     await page.goto(url);
+    console.log(url);
     await page.waitForSelector(USERNAME_SELECTOR);
     await page.waitForSelector(PASSWORD_SELECTOR);
     await page.waitForSelector(BTN_SELECTOR);
@@ -33,12 +34,9 @@ const downloadImage = async (req, res) => {
     await page.click(BTN_SELECTOR);
 
     await page.waitForNavigation();
-    await page.waitForSelector(
-      "#react-root > section > main > div > div > div > div > button"
-    );
-    await page.click(
-      "#react-root > section > main > div > div > div > div > button"
-    );
+
+    page.goto(url);
+
     await page.waitForNavigation();
 
     const imgLinks = await page.evaluate(async () => {

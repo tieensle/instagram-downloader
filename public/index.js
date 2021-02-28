@@ -28,7 +28,6 @@ btn.addEventListener("click", async (event) => {
     .catch((err) => {
       //TODO: HANDLE ERROR
     });
-  console.log(imgs);
   imgGallery.innerHTML = "";
   btnDownloadAll.style.setProperty("display", "block");
 

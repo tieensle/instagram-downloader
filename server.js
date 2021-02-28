@@ -11,6 +11,7 @@ require("dotenv").config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/assets"));
 app.use(express.static(__dirname + "/controllers"));
 
 const { downloadImage } = require("./controllers/download.js");
@@ -24,7 +25,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.sendFile("index.html");
+  res.sendFile("index1.html");
 });
 
 app.post("/img", async (req, res) => {
