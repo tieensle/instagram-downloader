@@ -2,353 +2,105 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="./styles.css" />
-
-    <title>Instagram Downloader</title>
+    <title>Document</title>
+    <link
+      href="/font/fontawesome-free-5.15.2-web/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!--load all styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div id="app" class="container">
-      <h3 class="title">
-        The more images, the more time we use to collect ( < 3 minutes). Please
-        refresh if it take long time
-      </h3>
-      <div class="download">
-        <input
-          type="text"
-          class="input"
-          placeholder="URL Instagram"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-          id="img-url"
-        />
-        <div class="">
-          <button class="btn btn-primary" type="button" id="get-btn">
-            <i class="fas fa-search btn-icon"></i>
-            <div class="btn-txt">Search</div>
-          </button>
-          <button type="button" id="download-btn" style="display: none">
-            Download all image
-          </button>
+    <div class="app">
+      <header class="header">
+        <div class="main-menu">
+          <a href="/public/index.html" class="brand">
+            <p class="brand-text">DOWNLOADER</p>
+          </a>
         </div>
-      </div>
-
-      <div class="images" id="images">
-        <div class="row">
-          <div class="col-md-4 image">
-            <div class="card mb-4 box-shadow">
-              <img
-                class="card-img-top"
-                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                alt="Thumbnail [100%x225]"
-                style="height: auto; width: 100%; display: block"
-                src="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                data-holder-rendered="true"
-              />
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      href="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      target="_blank"
-                    >
-                      View
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      data-link="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      id="single-download-btn"
-                    >
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
+      </header>
+      <main class="main">
+        <div class="container">
+          <ul class="sub-menu">
+            <li>
+              <a href="/" class="menu-item is-active" id="download-ins">
+                <i class="item-icon fab fa-instagram"></i>
+                <div class="item-text">DOWNLOADER FOR INSTAGRAM</div>
+              </a>
+            </li>
+            <li>
+              <a href="" class="menu-item disabled-item" id="download-fb">
+                <i class="item-icon fab fa-facebook-f"></i>
+                <div class="item-text">DOWNLOADER FOR FACEBOOK</div>
+              </a>
+            </li>
+          </ul>
+          <div class="item-info">
+            <div class="item-title">DOWNLOADER FOR INSTAGRAM</div>
+            <div class="item-description">
+              Use Downloader for Instagram to save Instagram photos and videos
+              from your Instagram account or any public one.
             </div>
           </div>
-          <div class="col-md-4 image">
-            <div class="card mb-4 box-shadow">
-              <img
-                class="card-img-top"
-                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                alt="Thumbnail [100%x225]"
-                style="height: auto; width: 100%; display: block"
-                src="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                data-holder-rendered="true"
+          <ul class="sub-menu menu-download">
+            <li>
+              <a
+                href="/"
+                class="menu-download-item is-active-download"
+                id="download-ins-photo"
+              >
+                <i class="item-icon far fa-image"></i>
+                <div class="item-download-text">Download photo</div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="menu-download-item disabled-item"
+                id="download-ins-video"
+              >
+                <i class="item-icon far fa-play-circle"></i>
+                <div class="item-download-text">Download video</div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="menu-download-item disabled-item"
+                id="download-ins-story"
+              >
+                <i class="item-icon fas fa-download"></i>
+                <div class="item-download-text">Download stories</div>
+              </a>
+            </li>
+          </ul>
+          <div class="content">
+            <form action="" class="download-form">
+              <i class="fas fa-link link-icon"></i>
+              <input
+                type="text"
+                placeholder="Example: https://www.instagram.com/teddysphotos/"
+                class="url-input"
+                id="url"
               />
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      href="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      target="_blank"
-                    >
-                      View
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      data-link="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      id="single-download-btn"
-                    >
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <button class="btn btn-submit" id="search-btn">
+                <i class="fas fa-arrow-circle-right btn-icon"></i>
+                <div class="btn-text">SEARCH</div>
+              </button>
+            </form>
           </div>
-          <div class="col-md-4 image">
-            <div class="card mb-4 box-shadow">
-              <img
-                class="card-img-top"
-                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                alt="Thumbnail [100%x225]"
-                style="height: auto; width: 100%; display: block"
-                src="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                data-holder-rendered="true"
-              />
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      href="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      target="_blank"
-                    >
-                      View
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      data-link="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      id="single-download-btn"
-                    >
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <button class="btn all-download-btn">DOWNLOAD ALL</button>
+          <div class="image-gallery"></div>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-              <img
-                class="card-img-top"
-                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                alt="Thumbnail [100%x225]"
-                style="height: auto; width: 100%; display: block"
-                src="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                data-holder-rendered="true"
-              />
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      href="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      target="_blank"
-                    >
-                      View
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      data-link="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      id="single-download-btn"
-                    >
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-              <img
-                class="card-img-top"
-                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                alt="Thumbnail [100%x225]"
-                style="height: auto; width: 100%; display: block"
-                src="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                data-holder-rendered="true"
-              />
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      href="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      target="_blank"
-                    >
-                      View
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      data-link="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      id="single-download-btn"
-                    >
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-              <img
-                class="card-img-top"
-                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                alt="Thumbnail [100%x225]"
-                style="height: auto; width: 100%; display: block"
-                src="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                data-holder-rendered="true"
-              />
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      href="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      target="_blank"
-                    >
-                      View
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      data-link="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      id="single-download-btn"
-                    >
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-              <img
-                class="card-img-top"
-                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                alt="Thumbnail [100%x225]"
-                style="height: auto; width: 100%; display: block"
-                src="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                data-holder-rendered="true"
-              />
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      href="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      target="_blank"
-                    >
-                      View
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      data-link="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      id="single-download-btn"
-                    >
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-              <img
-                class="card-img-top"
-                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                alt="Thumbnail [100%x225]"
-                style="height: auto; width: 100%; display: block"
-                src="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                data-holder-rendered="true"
-              />
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      href="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      target="_blank"
-                    >
-                      View
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      data-link="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      id="single-download-btn"
-                    >
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-              <img
-                class="card-img-top"
-                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                alt="Thumbnail [100%x225]"
-                style="height: auto; width: 100%; display: block"
-                src="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                data-holder-rendered="true"
-              />
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      href="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      target="_blank"
-                    >
-                      View
-                    </a>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-secondary"
-                      data-link="https://instagram.fhan5-7.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/c0.90.720.720a/s640x640/152027137_451009749430596_25524153880252064_n.jpg?_nc_ht=instagram.fhan5-7.fna.fbcdn.net&amp;_nc_cat=100&amp;_nc_ohc=dyZ2uxyC26MAX9dyzFB&amp;tp=1&amp;oh=009458fbd80b961dec00db8fc95ff09c&amp;oe=6033D736"
-                      id="single-download-btn"
-                    >
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </main>
     </div>
   </body>
-  <script type="module" src="main.js"></script>
+  <script src="index.js"></script>
 </html>
