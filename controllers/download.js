@@ -25,7 +25,6 @@ const downloadImage = async (req, res) => {
       height: 720,
     });
     await page.goto(url);
-    console.log(url);
     await page.waitForSelector(USERNAME_SELECTOR);
     await page.waitForSelector(PASSWORD_SELECTOR);
     await page.waitForSelector(BTN_SELECTOR);
