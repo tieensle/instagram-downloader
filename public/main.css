@@ -46,11 +46,11 @@ i {
     right: 40;
 }
 
-.brand {
+.logo {
     text-decoration: none;
 }
 
-.brand-text {
+.logo-text {
     color: var(--black-color);
     font-size: 2.2rem;
     font-weight: 700;
